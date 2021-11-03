@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Delete</title>
+     <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+     <div class="container">
+
+          <h1 class="heading">Delete User</h1>
+          
+          <form id="form" class="form shadow" action="/deleteUser" method="post">
+               <!-- <label for="nameToDelete">Name to update</label> -->
+               <input class="shadow-i" type="text" id="nameToDelete" name="nameToDelete" placeholder="Name of user">
+               <button class="btn shadow" type="submit">Delete</button>
+               <a class="a shadow" href="/">Cancel</a>
+          </form>
+          
+          <% if(locals.error) { %>
+               <p class="error">Incorrect name</p>
+               <% } %>
+               
+     </div>
+</body>
+</html>

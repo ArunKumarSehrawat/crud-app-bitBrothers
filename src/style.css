@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+*{
+     box-sizing: border-box;
+}
+
+html{
+     background-color: rgb(172, 232, 255);
+}
+
+body{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+     margin: 0;
+     padding: 0;
+     font-family: 'Rubik', sans-serif;
+}
+
+body.top{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     min-height: 100vh;
+     margin: 0;
+     padding: 0;
+     font-family: 'Rubik', sans-serif;
+}
+     
+.container{
+     /* background-color: hsl(0, 79%, 65%); */
+     background-color:rgb(240, 240, 240);
+     width: 500px;
+     margin:25px;
+     color: black;
+     border-radius: 25px;
+}
+
+.container .heading{
+     text-align: center;
+     padding:15px;
+}
+
+.container .heading:hover{
+     /* color:lightgrey; */
+}
+
+.container .form{
+     padding:10px;
+     margin: 20px;
+     border-radius:25px;
+     /* animation-name: form; */
+     /* animation-duration: 1s; */
+     /* overflow: hidden; */
+}
+
+.container input{
+     display:block;
+     height:40px;
+     width:80%;
+     margin:20px auto 10px auto;
+     outline:none;
+     border:none;
+     border-radius: 25px;
+     padding:5%;
+     font-size:1rem;
+     font-family: inherit;
+     background-color: inherit;
+     color: black;
+     transition:box-shadow 1s;
+}
+
+.container input::placeholder{
+     color:grey;
+}
+
+.container input:focus{
+     box-shadow: none;
+}
+
+.container .btnn{
+     display:block;
+     height:40px;
+     width:80%;
+     margin:20px auto 20px auto;
+     outline:none;
+     border:none;
+     border-radius: 25px;
+     font-size:1rem;
+     font-family: inherit;
+     font-weight: bold;
+     color: inherit;
+     background-color: inherit;
+     transition:250ms;
+}
+
+.container .a {
+     display:block;
+     height:40px;
+     width:80%;
+     margin:0px auto 20px auto;
+     outline:none;
+     border:none;
+     border-radius: 25px;
+     font-size:1rem;
+     font-family: inherit;
+     font-weight: bold;
+     color: inherit;
+     background-color: inherit;
+     transition:250ms;
+     text-align: center;
+     text-decoration: none;
+     padding: 10px;
+}
+
+.a:hover {
+     box-shadow: none;
+}
+
+.container .error {
+     text-align: center;
+     color: rgb(255, 108, 108);
+}
+
+.btnn:hover{
+     box-shadow:none;
+}
+
+.shadow{
+     /*--top shadow: darker, bottom shadow: lighter*/
+      /* box-shadow: 5px 5px 10px hsl(0, 79%, 60%), -5px -5px 10px hsl(0, 79%, 70%); */
+     box-shadow: 5px 5px 10px rgb(218, 218, 218), -5px -5px 10px rgb(253, 253, 253);
+}
+
+.shadow-i{
+     /*--top shadow: lighter, bottom shadow: darker*/
+      /* box-shadow: -3px -3px 10px hsl(0, 79%, 80%) inset,5px 5px 10px hsl(0, 79%, 50%) inset; */
+     box-shadow: -3px -3px 10px rgb(253, 253, 253) inset,5px 5px 10px rgb(165, 165, 165) inset;
+     /* box-shadow:5px 5px 10px rgb(253, 253, 253) inset, -3px -3px 10px rgb(165, 165, 165) inset; */
+}
+

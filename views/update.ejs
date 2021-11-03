@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Update</title>
+     <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+     <div class="container">
+
+          <h1 class="heading">Update user</h1>
+          
+          <form id="form" class="form shadow" action="/updateUser" method="post">
+               <input class="shadow-i" type="text" id="nameToUpdate" name="nameToUpdate"  placeholder="Name to update" value="<%= locals.username %>">
+               <input class="shadow-i" type="text" id="uname" name="uname" placeholder="New name" >
+               <input class="shadow-i" type="text" id="uusername" name="uusername" placeholder="New username">
+               <button class="btn shadow" type="submit">Update</button>
+               <a class="a shadow" href="/">Cancel</a>
+          </form>
+          
+          <% if(locals.error) { %>
+               <p class="error">User doesn't exists.</p>
+          <% } %>
+               
+     </div>
+</body>
+</html>

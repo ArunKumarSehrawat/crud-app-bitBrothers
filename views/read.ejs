@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Read</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+     <link rel="stylesheet" href="style.css">
+
+
+     <style>
+          table {
+               width: 40%;
+               background-color: rgb(240, 240, 240);
+               border-radius: 20px;
+               text-align: center;
+          }
+          table td, th {
+               padding: 5px;
+          }
+     </style>
+
+</head>
+<body class="top" style="background-color: rgb(172, 232, 255);">
+
+     <div class="container">
+          <h1 class="heading">Users</h1>
+          <form id="form" class="form shadow" action="/readUser" method="get">
+               <input class="shadow-i" type="text" name="name" placeholder="Search User">
+               <button class="btnn shadow" type="submit">Submit</button>
+               <a class="a shadow" href="/">Go Back</a>
+          </form>
+          <% if(locals.error) { %>
+               <p class="error">No user was found</p>
+          <% } %>
+     </div>
+
+     <% if(users.length > 0) { %> 
+          <table class="">
+               <thead>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+               </thead>
+          <tbody>
+               <% users.forEach(user => { %>
+                         <tr>
+                              <td><%= user.name %></td>
+                              <td><%= user.username %></td>
+                              <td><%= user.password %></td>
+                              <td>
+                                   <form action="/updateUser" method="get">
+                                        <input type="hidden" name="name" value="<%= user.name %>">
+                                        <button class="btn btn-success" type="submit">Update</button>
+                                   </form>
+                              </td>
+                              <td>
+                                   <form action="/deleteUser" method="post">
+                                        <input type="hidden" name="nameToDelete" value="<%= user.name %>">
+                                        <button class="btn btn-danger" type="submit">Delete</button>
+                                   </form>
+                              </td>
+                         </tr>
+               <% }) %>
+          </tbody>
+          </table>
+     <% } %>
+     
+     
+</body>
+</html>
+
+
+
+<!-- <% if(users.length > 0) { %> 
+     <table class="table table-striped table-hover" style="width: 40%; border-radius: 20px;">
+          <tr class="table-light" style="border-radius: 20px !important;">
+          <th>Name</th>
+          <th>Username</th>
+          <th>Password</th>
+          <th>Edit</th>
+          <th>Delete</th>
+     </tr>
+     <% users.forEach(user => { %>
+          <tr class="table-light">
+               <td><%= user.name %></td>
+               <td><%= user.username %></td>
+               <td><%= user.password %></td>
+               <td>
+                    <form action="/updateUser" method="get">
+                         <input type="hidden" name="name" value="<%= user.name %>">
+                         <button class="btn btn-success" type="submit">Update</button>
+                    </form>
+               </td>
+               <td>
+                    <form action="/deleteUser" method="post">
+                         <input type="hidden" name="nameToDelete" value="<%= user.name %>">
+                         <button class="btn btn-danger" type="submit">Delete</button>
+                    </form>
+               </td>
+          </tr>
+     <% }) %>
+     </table>
+<% } %> -->
